@@ -2,14 +2,58 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              mc:Ignorable="d"
              x:Class="IBankingXamarinForms.Views.ProfilePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="ic_account_circle.png"
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   Grid.Row="0"
+                   Grid.RowSpan="3"
+                   Grid.ColumnSpan="4" 
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding User.Name}" TextColor="#021d59" Grid.Row="2" VerticalOptions="EndAndExpand" Grid.ColumnSpan="4" Margin="0,15" FontSize="20" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+
+            <Image Source="setup.png"
+                   Margin="10,10"
+                   HeightRequest="40"
+                   WidthRequest="50"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="4"
+                   VerticalOptions="StartAndExpand"
+                   HorizontalOptions="EndAndExpand"/>
+
+            <pancakeView:PancakeView Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="4" CornerRadius="40,40,0,0" BackgroundColor="#021d59" >
+                <StackLayout Orientation="Vertical" Padding="30">
+                    <Label Text="ID Card :" TextColor="White" FontSize="18"/>
+                    <Label Text="{Binding User.IdCard}" TranslationX="20" TextColor="White" FontSize="16"/>
+                    <Label Text="Email:" TextColor="White" FontSize="18"/>
+                    <Label Text="{Binding User.Email}" TranslationX="20" TextColor="White" FontSize="16"/>
+                    <Label Text="Lugar de trabajo" TextColor="White" FontSize="18"/>
+                    <Label Text="{Binding User.JobCompany}" TranslationX="20" TextColor="White" FontSize="16"/>
+                    <Button Text="Transferir" Command="{Binding TransactionCommand}" FontAttributes="Bold" TextColor="#021d59" BackgroundColor="White" CornerRadius="30" VerticalOptions="EndAndExpand" />
+                    <Button Text="Sign off" FontAttributes="Bold" TextColor="#021d59" BackgroundColor="White" CornerRadius="30" VerticalOptions="EndAndExpand" />
+                    
+                </StackLayout>
+            </pancakeView:PancakeView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

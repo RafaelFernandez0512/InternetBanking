@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              mc:Ignorable="d"
              xmlns:system="clr-namespace:System;assembly=netstandard"
-             x:Class="IBankingXamarinForms.Views.AccountPage">
+             x:Class="IBankingXamarinForms.Views.AccountPage"
+             
+             >
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="pancakeview:PancakeView">
@@ -20,9 +22,9 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <pancakeview:PancakeView Padding="10" >
-                <Grid>
+        <StackLayout Orientation="Vertical" Padding="10">
+            <pancakeview:PancakeView Padding="10"  HeightRequest="400">
+                <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -32,7 +34,7 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Image Source="logoblanco.png"
+                    <Image Source="logo_blanco.png"
                            Grid.Row="0"/>
                     <Label Grid.Row="0"     
                                            VerticalOptions="CenterAndExpand"
@@ -64,8 +66,51 @@
                                            Text="{Binding Account.FechaActualizacion,StringFormat='{0:MM/yyyy}'}">
 
                     </Label>
+
                 </Grid>
             </pancakeview:PancakeView>
+            <CollectionView ItemsSource="{Binding Transactions}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout VerticalItemSpacing="10"
+                                     Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <pancakeview:PancakeView>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <ImageButton Grid.Column="0"
+                                   Source="ic_account_circle"
+                                             BackgroundColor="Transparent"
+                                     CornerRadius="40"
+                                   Grid.RowSpan="2"/>
+                                <Label Text="{Binding IdCuentaReceptor }"
+                                   Grid.Column="1"/>
+                                <Label Text="{Binding TipoTransaccion}"
+                                   Grid.Column="2"
+                                   VerticalOptions="StartAndExpand"
+                                   />
+                                <Label Text="{Binding MontoTransaccion}"
+                                               Grid.Column="2"
+                                   VerticalOptions="EndAndExpand"/>
+                                <Label Text="{Binding Descripción}"
+                                   Grid.Row="1"
+                                    Grid.Column="1"
+                                   Grid.ColumnSpan="2"/>
+                            </Grid>
+                        </pancakeview:PancakeView>
+                    </DataTemplate>
+                        
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

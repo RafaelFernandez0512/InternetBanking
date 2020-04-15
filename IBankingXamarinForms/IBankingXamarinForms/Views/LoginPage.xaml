@@ -2,14 +2,127 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              mc:Ignorable="d"
+             BackgroundColor="#021d59"
              x:Class="IBankingXamarinForms.Views.LoginPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="logo_blanco.png" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="4" VerticalOptions="CenterAndExpand" />
+            <pancakeView:PancakeView BackgroundColor="White" Grid.Row="2" CornerRadius="40,40,0,0" Grid.RowSpan="5" Grid.ColumnSpan="4">
+                <Grid Padding="20" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Login to Account"
+                           VerticalOptions="StartAndExpand" 
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="#021d59"
+                           FontSize="25"
+                           FontAttributes="Bold"
+                           Grid.Row="0"
+                           Grid.ColumnSpan="4"
+                           />
+                    <Frame BackgroundColor="#021d59"  VerticalOptions="Start" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4" CornerRadius="20">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="User ID"
+                                   TextColor="White"
+                                   VerticalOptions="Start"
+                                   HorizontalOptions="Start"
+                                   Grid.Row="0"
+                                   Grid.Column="0" />
+
+                            <Entry  
+                                    Text="{Binding User.Username}"
+                                    TextColor="White"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                
+                                    Grid.ColumnSpan="3"/>
+
+
+                            <Label Text="Password"
+                                   TextColor="White" 
+                                   VerticalOptions="Start"
+                                   HorizontalOptions="Start"
+                                   Grid.Row="1"
+                                   Grid.Column="0" />
+
+                            <Entry 
+                                   PlaceholderColor="White"
+                                    Text="{Binding User.Password}"
+                                   TextColor="White" 
+                                   Grid.Row="1"
+                                   Grid.Column="0"
+                                   Grid.ColumnSpan="3"
+                                   IsPassword="True"
+                                   />
+                            <Image Source="{Binding ImageModel}"
+                                   HeightRequest="30"
+                                   WidthRequest="40"
+                                     Grid.Row="1"
+                                    Grid.Column="2"
+                                    HorizontalOptions="End" 
+                                    VerticalOptions="Center">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ButtonEyeClickedCommand}"
+                                          NumberOfTapsRequired="1"/>
+
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+                    </Frame>
+                    <Frame  Grid.Row="3" Grid.Column="0" HorizontalOptions="CenterAndExpand" Grid.ColumnSpan="4" CornerRadius="20" HasShadow="True" BorderColor="#021d59">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="lock.png" HeightRequest="40" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start"/>
+                            <Label Text="Login "
+                           VerticalOptions="Start" 
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="#021d59"
+                           FontSize="25"
+                           FontAttributes="Bold"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SignOutCommand}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </Grid>
+            </pancakeView:PancakeView>
+           
+        </Grid>
+      
+         
+      
     </ContentPage.Content>
 </ContentPage>

@@ -8,6 +8,11 @@
              mc:Ignorable="d"
              x:Class="IBankingXamarinForms.App">
     <Application.Resources>
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#021d59"/>
+            <Setter Property="BarTextColor" Value="White"/>
 
+
+        </Style>
     </Application.Resources>
 </prism:PrismApplication>

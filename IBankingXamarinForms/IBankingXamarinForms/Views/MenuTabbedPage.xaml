@@ -9,8 +9,9 @@
             BarBackgroundColor="#021d59"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
+            BarTextColor="White"
             
              >
-    <views:HomePage Title="Home"/>
-    <views:ProfilePage Title="Profile"/>
+    <views:HomePage Title="Home" IconImageSource="ic_action_home"/>
+    <views:ProfilePage Title="Profile" IconImageSource="ic_action_person"/>
 </TabbedPage>

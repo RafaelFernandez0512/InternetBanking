@@ -20,14 +20,13 @@ namespace IBankingXamarinForms
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync(new Uri($"{ConfigPage.MenuTabbedPage}",UriKind.Absolute));
+            NavigationService.NavigateAsync(new Uri($"{ConfigPage.NavigationPage}{ConfigPage.LoginPage}",UriKind.Absolute));
         }
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterInstance <IApiBanking>(new ApiBanking());
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
-            containerRegistry.RegisterForNavigation<RegisterTransactionPage, RegisterTransactionPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuTabbedPage>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>();
