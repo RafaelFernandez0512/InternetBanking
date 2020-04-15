@@ -8,5 +8,4 @@
              x:Class="IBankingXamarinForms.Views.MenuTabbedPage">
     <views:HomePage/>
     <views:ProfilePage/>
-    <views:TransactionPage/>
 </TabbedPage>
