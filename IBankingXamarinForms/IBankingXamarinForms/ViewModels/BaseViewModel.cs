@@ -3,11 +3,12 @@ using Prism.Navigation;
 using Prism.Services;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace IBankingXamarinForms.ViewModels
 {
-    public class BaseViewModel
+    public class BaseViewModel:INotifyPropertyChanged
     {
         protected INavigationService navigationService;
         protected IApiBanking apiBanking;
@@ -19,5 +20,7 @@ namespace IBankingXamarinForms.ViewModels
             this.apiBanking = apiBanking;
             this.DialogService = DialogService;
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

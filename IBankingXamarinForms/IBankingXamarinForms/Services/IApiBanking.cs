@@ -9,17 +9,17 @@ namespace IBankingXamarinForms.Services
 {
     public interface IApiBanking
     {
-        [Post("api/CoreTransaction")]
-        Task PostTransaction([Body]ClsTransaction Transaction);
-        [Get("api/CoreTransaction")]
+        [Post("/api/CoreTransaction")]
+        Task PostTransaction([Body]ClsTransaction Transaction); 
+        [Get("/api/CoreTransaction")]
         Task<List<ClsTransaction>> GetTransaction();
-        [Get("api/CoreTransaction?idCuenta={idCuenta}")]
-        Task<List<ClsTransaction>> GetTransaction(int account);
-        [Get("api/CoreClient?cedula={cedula}")]
+        [Get("/api/CoreTransaction?idCuenta={idCuenta}")]
+        Task<List<ClsTransaction>> GetTransactionID(int idCuenta);
+        [Get("/api/CoreClient?cedula={idCard}")]
         Task<ClsClient> GetClient(long idCard);
-        [Get("api/CoreUser?username={username}&password={password}")]
+        [Get("/api/CoreUser?username={username}&password={password}")]
         Task<ClsUser> ValidateLogin(string username,string password);
-        [Get("api/CoreAccount?cedula={cedula}")]
+        [Get("/api/CoreAccount?cedula={cedula}")]
         Task<List<ClsAccount>> GetAccount(long cedula);
      
 

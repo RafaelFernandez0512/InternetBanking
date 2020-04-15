@@ -5,7 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
             xmlns:views="clr-namespace:IBankingXamarinForms.Views"
             mc:Ignorable="d"
-             x:Class="IBankingXamarinForms.Views.MenuTabbedPage">
-    <views:HomePage/>
-    <views:ProfilePage/>
+             x:Class="IBankingXamarinForms.Views.MenuTabbedPage"
+            BarBackgroundColor="#021d59"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            
+             >
+    <views:HomePage Title="Home"/>
+    <views:ProfilePage Title="Profile"/>
 </TabbedPage>

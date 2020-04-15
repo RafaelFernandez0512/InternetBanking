@@ -12,6 +12,7 @@ namespace IBankingXamarinForms.Helpers
         public const string ProfilePage = "/ProfilePage";
         public const string RegisterTransactionPage = "/HomePage";
         public const string TransactionPage = "/TransactionPage";
+        public const string AccountPage = "/AccountPage"; 
 
     }
 }

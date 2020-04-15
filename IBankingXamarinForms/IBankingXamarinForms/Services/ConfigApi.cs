@@ -6,6 +6,6 @@ namespace IBankingXamarinForms.Services
 {
     public static class ConfigApi
     {
-        public const string UrlApi = "";
+        public const string UrlApi = "https://webcoreapiazure.azurewebsites.net";
     }
 }

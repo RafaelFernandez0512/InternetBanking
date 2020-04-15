@@ -30,10 +30,10 @@ namespace IBankingXamarinForms.Services
             return trans;
         }
 
-        public async Task<List<ClsTransaction>> GetTransaction(int account)
+        public async Task<List<ClsTransaction>> GetTransactionID(int idCuenta)
         {
             var getRequest = RestService.For<IApiBanking>(ConfigApi.UrlApi);
-            var trans =  await getRequest.GetTransaction(account);
+            var trans =  await getRequest.GetTransactionID(idCuenta);
             return trans;
         }
 
