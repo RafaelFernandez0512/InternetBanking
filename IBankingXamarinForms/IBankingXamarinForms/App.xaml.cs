@@ -20,7 +20,7 @@ namespace IBankingXamarinForms
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync(new Uri($"{ConfigPage.MenuTabbedPage}",UriKind.Absolute));
+            NavigationService.NavigateAsync(new Uri($"{ConfigPage.TransactionPage}",UriKind.Absolute));
         }
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {

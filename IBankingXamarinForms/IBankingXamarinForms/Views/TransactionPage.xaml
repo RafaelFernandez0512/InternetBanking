@@ -2,14 +2,64 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              mc:Ignorable="d"
              x:Class="IBankingXamarinForms.Views.TransactionPage">
     <ContentPage.Content>
-        <StackLayout>
+        <Grid Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+            <pancakeView:PancakeView CornerRadius="20" BackgroundColor="#021d59" >
+                <Grid Padding="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Make your transactions safely!!"
+                           Grid.Row="0"
+                           Grid.ColumnSpan="4"
+                           FontSize="18"
+                           TextColor="White"
+                           HorizontalOptions="EndAndExpand"/>
+                    
+                    <Picker Title="Select your account:"
+                            TitleColor="White"
+                            TextColor="White" 
+                            Grid.Row="1"
+                            Grid.ColumnSpan="4" VerticalOptions="Start"/>
+                    <Picker Title="Select the destination account:"
+                            TitleColor="White"
+                            TextColor="White"
+                            Grid.Row="2"
+                            Grid.ColumnSpan="4" VerticalOptions="Start"/>
+                    <Label Text="Enter the amount :"
+                           Grid.Row="3"
+                           Grid.ColumnSpan="4"
+                           FontSize="18"
+                           TextColor="White"
+                           HorizontalOptions="StartAndExpand"
+                           />
+                    <Entry Placeholder="$$" PlaceholderColor="White" Text="" TextColor="White" Keyboard="Numeric" Grid.Row="3" VerticalOptions="Center" Grid.ColumnSpan="2"/>
+
+                    <Entry Text="" Placeholder="Descripcion de transaccion:" PlaceholderColor="White" TextColor="White" Grid.Row="4" Grid.ColumnSpan="4" VerticalOptions="StartAndExpand" />
+                    <Button Text="Confirm" TextColor="#021d59" FontAttributes="Bold" BackgroundColor="White" Grid.Row="5" HeightRequest="100" WidthRequest="100" Grid.ColumnSpan="4" CornerRadius="60"/>
+
+                </Grid>
+            </pancakeView:PancakeView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
