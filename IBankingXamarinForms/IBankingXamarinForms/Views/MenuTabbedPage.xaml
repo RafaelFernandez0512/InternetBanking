@@ -12,6 +12,14 @@
             BarTextColor="White"
             
              >
-    <views:HomePage Title="Home" IconImageSource="ic_action_home"/>
-    <views:ProfilePage Title="Profile" IconImageSource="ic_action_person"/>
+    <NavigationPage Title="Home" IconImageSource="ic_action_home" NavigationPage.HasNavigationBar="False">
+        <x:Arguments>
+            <views:HomePage Title="Home" IconImageSource="ic_action_home"/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Profile" IconImageSource="ic_action_person" NavigationPage.HasNavigationBar="False">
+        <x:Arguments >
+            <views:ProfilePage Title="Profile" IconImageSource="ic_action_person"/>
+        </x:Arguments>
+    </NavigationPage>
 </TabbedPage>

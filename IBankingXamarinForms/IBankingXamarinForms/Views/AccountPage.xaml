@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              xmlns:system="clr-namespace:System;assembly=netstandard"
              x:Class="IBankingXamarinForms.Views.AccountPage"
-             
+             Title="{Binding Account.IdCuenta,StringFormat='Cuenta: {0}'}"
              >
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -68,7 +68,12 @@
                     </Label>
 
                 </Grid>
+
             </pancakeview:PancakeView>
+            <Label Text="Historial"
+                       TextColor="Black"
+                       FontSize="20"
+                   HorizontalOptions="Center"/>
             <CollectionView ItemsSource="{Binding Transactions}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout VerticalItemSpacing="10"
@@ -94,11 +99,14 @@
                                    Grid.RowSpan="2"/>
                                 <Label Text="{Binding IdCuentaReceptor }"
                                    Grid.Column="1"/>
+                                <Label Text="{Binding FechaCreacion,StringFormat='{0:dd/MM/yy}' }"
+                                       VerticalOptions="EndAndExpand"
+                                   Grid.Column="1"/>
                                 <Label Text="{Binding TipoTransaccion}"
                                    Grid.Column="2"
                                    VerticalOptions="StartAndExpand"
                                    />
-                                <Label Text="{Binding MontoTransaccion}"
+                                <Label Text="{Binding MontoTransaccion,StringFormat='{0:c}'}"
                                                Grid.Column="2"
                                    VerticalOptions="EndAndExpand"/>
                                 <Label Text="{Binding Descripción}"

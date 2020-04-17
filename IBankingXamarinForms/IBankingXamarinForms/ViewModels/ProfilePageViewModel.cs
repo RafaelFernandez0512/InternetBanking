@@ -16,6 +16,7 @@ namespace IBankingXamarinForms.ViewModels
         public ClsClient User { get; set; }
         public DelegateCommand LoadUserCommad { get; set; }
         public DelegateCommand TransactionCommand { get; set; }
+
         
         public ProfilePageViewModel(INavigationService navigationService, IApiBanking apiBanking, IPageDialogService dialogService) : base(navigationService, apiBanking, dialogService)
         {
@@ -27,7 +28,7 @@ namespace IBankingXamarinForms.ViewModels
             TransactionCommand = new DelegateCommand(async () =>
             {
 
-                await navigationService.NavigateAsync(new Uri($"{ConfigPage.NavigationPage}{ConfigPage.TransactionPage}", UriKind.Relative));
+                await navigationService.NavigateAsync(new Uri($"{ConfigPage.TransactionPage}", UriKind.Relative));
             });
         }
         async Task FindUser()

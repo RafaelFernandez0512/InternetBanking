@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:system ="clr-namespace:System;assembly=netstandard"
              mc:Ignorable="d"
+                          NavigationPage.HasNavigationBar="False"
              x:Class="IBankingXamarinForms.Views.HomePage">
     <ContentPage.Resources>
         <ResourceDictionary>

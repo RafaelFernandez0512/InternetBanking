@@ -46,7 +46,7 @@ namespace IBankingXamarinForms.ViewModels
             {
                 { "Account", clsAccount }
             };
-            await navigationService.NavigateAsync(new Uri($"{ConfigPage.NavigationPage}{ConfigPage.AccountPage}", UriKind.Relative), param);
+            await navigationService.NavigateAsync(new Uri($"{ConfigPage.AccountPage}", UriKind.Relative), param);
         }
         async Task GetAccount(long cedula) {
                 var accounts = await apiBanking.GetAccount(cedula);

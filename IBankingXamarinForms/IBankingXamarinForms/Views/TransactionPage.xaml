@@ -4,15 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              mc:Ignorable="d"
-             x:Class="IBankingXamarinForms.Views.TransactionPage">
+             x:Class="IBankingXamarinForms.Views.TransactionPage"
+             Title="Transacciones">
     <ContentPage.Content>
         <Grid Padding="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
             <pancakeView:PancakeView CornerRadius="20" BackgroundColor="#021d59" >
                 <Grid Padding="15">
                     <Grid.RowDefinitions>
